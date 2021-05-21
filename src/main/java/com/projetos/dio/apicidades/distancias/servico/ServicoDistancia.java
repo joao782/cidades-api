@@ -20,25 +20,13 @@ public class ServicoDistancia {
         this.repositorioCidades = cityRepository;
     }
 
-    /**
-     * 2nd option
-     *
-     * @param city1
-     * @param city2
-     * @return
-     */
+
     public Double distanceByPointsInMiles(final Long city1, final Long city2) {
         log.info("nativePostgresInMiles({}, {})", city1, city2);
         return repositorioCidades.distanceByPoints(city1, city2);
     }
 
-    /**
-     * 4th option
-     *
-     * @param city1
-     * @param city2
-     * @return
-     */
+
     public Double distanceByCubeInMeters(Long city1, Long city2) {
         log.info("distanceByCubeInMeters({}, {})", city1, city2);
         final List<Cidade> cities = repositorioCidades.findAllById((Arrays.asList(city1, city2)));
